@@ -1,0 +1,5 @@
+{
+  "name": "Lạng Sơn Landslide Prediction",
+  "description": "An application that provides a simulated landslide risk forecast for Lạng Sơn province, Vietnam, using a generative AI model based on NASA's landslide data principles.",
+  "requestFramePermissions": []
+}
