@@ -102,22 +102,22 @@ export const GameModal: React.FC<GameModalProps> = ({ onClose }) => {
 
   return (
     <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 p-4" role="dialog" aria-modal="true">
-      <div className="bg-slate-800 border border-slate-600 rounded-2xl shadow-xl w-full max-w-lg p-6 text-white transform transition-all animate-fade-in-up">
+      <div className="bg-yellow-50 border border-yellow-300 rounded-2xl shadow-xl w-full max-w-lg p-6 text-slate-800 transform transition-all animate-fade-in-up">
         {!isFinished ? (
           <>
             <div className="flex justify-between items-start mb-4">
                 <div>
-                    <h2 className="text-xl font-bold text-emerald-400">Kiến thức An toàn Sạt lở</h2>
-                    <p className="text-gray-400">Câu {currentQuestionIndex + 1} / {questions.length} - Điểm: {score}</p>
+                    <h2 className="text-xl font-bold text-indigo-600">Kiến thức An toàn Sạt lở</h2>
+                    <p className="text-slate-500">Câu {currentQuestionIndex + 1} / {questions.length} - Điểm: {score}</p>
                 </div>
-                <button onClick={onClose} className="text-2xl text-gray-500 hover:text-white">&times;</button>
+                <button onClick={onClose} className="text-2xl text-slate-400 hover:text-slate-800">&times;</button>
             </div>
             <p className="text-lg mb-6">{questions[currentQuestionIndex].question}</p>
             <div className="space-y-3">
               {questions[currentQuestionIndex].options.map((option, index) => {
                 const isCorrect = index === questions[currentQuestionIndex].correctAnswer;
                 const isSelected = selectedAnswer === index;
-                let buttonClass = "w-full text-left p-3 rounded-lg border-2 border-slate-600 hover:bg-slate-700 transition-colors";
+                let buttonClass = "w-full text-left p-3 rounded-lg border-2 border-yellow-400 hover:bg-yellow-200 transition-colors";
                 if(showFeedback) {
                     if (isCorrect) buttonClass += " bg-green-500/30 border-green-500";
                     else if (isSelected) buttonClass += " bg-red-500/30 border-red-500";
@@ -130,18 +130,18 @@ export const GameModal: React.FC<GameModalProps> = ({ onClose }) => {
               })}
             </div>
             {showFeedback && (
-              <div className="mt-4 p-3 bg-slate-700/50 rounded-lg text-center">
+              <div className="mt-4 p-3 bg-yellow-100 rounded-lg text-center">
                 <p className="mb-3">{questions[currentQuestionIndex].feedback}</p>
-                <button onClick={handleNext} className="bg-emerald-600 hover:bg-emerald-500 px-6 py-2 rounded-lg font-bold">Tiếp tục</button>
+                <button onClick={handleNext} className="bg-indigo-600 hover:bg-indigo-500 text-white px-6 py-2 rounded-lg font-bold">Tiếp tục</button>
               </div>
             )}
           </>
         ) : (
              <div className="text-center">
-                <h2 className="text-2xl font-bold text-emerald-400 mb-2">Hoàn thành!</h2>
+                <h2 className="text-2xl font-bold text-indigo-600 mb-2">Hoàn thành!</h2>
                 <p className="text-lg mb-4">Điểm số cuối cùng của bạn là:</p>
                 <p className="text-5xl font-bold mb-6">{score} / {questions.length}</p>
-                <button onClick={onClose} className="bg-emerald-600 hover:bg-emerald-500 px-8 py-3 rounded-lg font-bold">Đóng</button>
+                <button onClick={onClose} className="bg-indigo-600 hover:bg-indigo-500 text-white px-8 py-3 rounded-lg font-bold">Đóng</button>
              </div>
         )}
       </div>

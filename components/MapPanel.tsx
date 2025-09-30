@@ -2,10 +2,10 @@ import React from 'react';
 
 export const MapPanel: React.FC = () => {
   return (
-    <div className="bg-slate-800/60 rounded-xl shadow-2xl p-4 sm:p-6 h-full border border-slate-700 flex flex-col justify-between">
+    <div className="bg-white/60 backdrop-blur-sm rounded-xl shadow-2xl p-4 sm:p-6 h-full border border-yellow-300/50 flex flex-col justify-between">
       <div>
-        <h2 className="text-xl font-bold mb-4 text-gray-200">Bản đồ Rủi ro Sạt lở</h2>
-        <p className="text-gray-400">
+        <h2 className="text-xl font-bold mb-4 text-slate-800">Bản đồ Rủi ro Sạt lở</h2>
+        <p className="text-slate-600">
           Bản đồ nền hiển thị vị trí địa lý của các xã và phường trong tỉnh Lạng Sơn. 
           Phân tích chi tiết về mức độ rủi ro cho từng khu vực được trình bày trong bảng bên cạnh.
         </p>
